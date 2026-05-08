@@ -282,3 +282,80 @@ class PhilosophyProject(Scene):
             FadeIn(blind_men)
         )
 
+        crushed = ImageMobject("assets/crushed.jpg").scale(3)
+        scared = ImageMobject("assets/scared.jpg").scale(3)
+        kill_elephant = ImageMobject("assets/kill_elephant.png")
+
+        self.play(
+            FadeIn(crushed),
+            FadeOut(blind_men)
+        )
+
+        self.wait()
+
+        self.play(
+            FadeIn(scared),
+            FadeOut(crushed)
+        )
+
+        self.wait()
+
+        self.play(
+            FadeIn(kill_elephant),
+            FadeOut(scared)
+        )
+
+        self.wait()
+
+        self.play(
+            FadeIn(blind_men),
+            FadeOut(kill_elephant)
+        )
+
+        self.wait()
+
+        self.play(FadeOut(blind_men))
+
+        self.wait()
+
+        point = Tex(r"So, what's the point?")
+
+        self.play(
+            Write(point)
+        )
+
+        self.play(point.animate.to_edge(UP))
+
+        errors = ImageMobject("assets/errors.jpg").scale(3)
+
+        self.play(
+            FadeIn(errors)
+        )
+
+        self.wait()
+
+        akinator = ImageMobject("assets/akinator.jpg").scale(2.5)
+
+        self.play(
+            FadeIn(akinator),
+            FadeOut(errors)
+        )
+
+        self.wait()
+
+        mime = ImageMobject("assets/mime.jpg").scale(3)
+
+        self.play(FadeOut(akinator))
+        self.wait()
+        self.play(FadeIn(mime))
+        self.wait()
+        self.play(FadeOut(mime))
+        self.wait()
+
+        cross = ImageMobject("assets/cross.jpg").scale(3)
+
+        self.play(FadeIn(cross))
+
+        self.wait()
+        self.play(FadeOut(cross), FadeOut(point))
+        self.wait()
