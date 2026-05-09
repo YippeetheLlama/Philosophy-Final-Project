@@ -8,7 +8,7 @@ class PhilosophyProject(Scene):
         self.play(
             Write(title_group),
         )
-        self.wait(3)
+        self.wait(7)
 
         date_title = Tex(r"November 2022")
 
@@ -16,7 +16,7 @@ class PhilosophyProject(Scene):
             Transform(title_group, date_title)
         )
 
-        self.wait()
+        self.wait(4)
 
         company_title = Tex(r"OpenAI")
 
@@ -24,7 +24,7 @@ class PhilosophyProject(Scene):
             Transform(title_group, company_title)
         )
 
-        self.wait()
+        self.wait(10)
 
         model_title = Tex(r"ChatGPT")
 
@@ -32,7 +32,7 @@ class PhilosophyProject(Scene):
             Transform(title_group, model_title)
         )
 
-        self.wait()
+        self.wait(2)
 
         model_title.to_corner(UP + LEFT)
 
@@ -64,11 +64,11 @@ class PhilosophyProject(Scene):
         self.play(quality.animate.set_opacity(1), run_time=1)
         self.wait(0.5)
 
-        self.wait(1)
+        self.wait(12)
 
         self.play(FadeIn(speedometer))
 
-        self.wait(2)
+        self.wait(4)
 
         self.play(FadeOut(title_group))
         self.play(FadeOut(speedometer))
@@ -76,7 +76,7 @@ class PhilosophyProject(Scene):
         self.play(accuracy.animate.set_opacity(0), run_time=0.2)
         self.play(quality.animate.set_opacity(0), run_time=0.2)
 
-        self.wait()
+        self.wait(3)
 
         title = Tex(r"Totally a joke ;)")
 
@@ -99,12 +99,14 @@ class PhilosophyProject(Scene):
             Write(the_prompt)
         )
 
-        self.wait()
+        self.wait(20)
 
         self.play(
             FadeOut(prompt),
             FadeOut(the_prompt)
         )
+
+        self.wait(13)
 
         student = ImageMobject("assets/student.jpg").scale(2.5)
         company = ImageMobject("assets/company.jpg").scale(2.5)
@@ -116,21 +118,21 @@ class PhilosophyProject(Scene):
             FadeIn(student)
         )
 
-        self.wait()
+        self.wait(2)
 
         self.play(
             FadeIn(company),
             FadeOut(student)
         )
 
-        self.wait()
+        self.wait(2)
 
         self.play(
             FadeIn(teacher),
             FadeOut(company)
         )
 
-        self.wait()
+        self.wait(1)
 
         self.play(
             FadeOut(teacher)
@@ -142,6 +144,8 @@ class PhilosophyProject(Scene):
         self.play(formula.animate.shift(LEFT*13))
         self.play(formula.animate.shift(RIGHT*2))
         self.play(formula.animate.shift(LEFT*30))
+
+        self.wait(13)
 
         axes = Axes(
             x_range=[0, 3, 1],
@@ -155,17 +159,18 @@ class PhilosophyProject(Scene):
 
         self.play(Create(axes))
         self.play(Create(graph))
-        self.wait()
+
+        self.wait(5)
 
         self.clear()
+
+        self.wait(9)
 
         karen = ImageMobject("assets/karen.jpg").scale(2.5)
 
         self.play(
             FadeIn(karen)
         )
-
-        self.wait()
 
         self.play(
             FadeOut(karen)
@@ -178,13 +183,15 @@ class PhilosophyProject(Scene):
             Write(whats_bad)
         )
 
+        self.wait(9)
+
         just_say = ImageMobject("assets/just_say.jpg").scale(3)
 
         self.play(
             FadeIn(just_say)
         )
 
-        self.wait()
+        self.wait(19)
 
         smurf = ImageMobject("assets/smurf.jpg").scale(3)
 
@@ -193,7 +200,7 @@ class PhilosophyProject(Scene):
             FadeOut(just_say)
         )
 
-        self.wait()
+        self.wait(21)
 
         teachers_text = Tex(r"Teachers").to_edge(LEFT)
         equals = Tex(r"=")
@@ -221,25 +228,31 @@ class PhilosophyProject(Scene):
 
         not_equals = MathTex(r"\neq")
 
+        self.wait(4)
+
         self.play(
             Transform(equals, not_equals)
         )
 
-        self.wait()
+        self.wait(3)
 
         bulb = ImageMobject("assets/broken_bulb.jpg").scale(3)
 
         self.clear()
 
+        self.wait(2)
+
         self.play(
             FadeIn(bulb)
         )
 
-        self.wait()
+        self.wait(30)
 
         self.play(
             FadeOut(bulb)
         )
+
+        self.wait(20)
 
         transform_title = Tex("Several Blind Children")
         transform_title.to_corner(UP + LEFT)
@@ -255,7 +268,7 @@ class PhilosophyProject(Scene):
             FadeIn(children)
         )
 
-        self.wait()
+        self.wait(12)
 
         elephant = ImageMobject("assets/elephant.jpg").scale(3)
 
@@ -272,7 +285,7 @@ class PhilosophyProject(Scene):
             rate_func=smooth
         )
 
-        self.wait()
+        self.wait(30)
 
         self.clear()
 
@@ -281,6 +294,8 @@ class PhilosophyProject(Scene):
         self.play(
             FadeIn(blind_men)
         )
+
+        self.wait(70)
 
         crushed = ImageMobject("assets/crushed.jpg").scale(3)
         scared = ImageMobject("assets/scared.jpg").scale(3)
@@ -291,28 +306,28 @@ class PhilosophyProject(Scene):
             FadeOut(blind_men)
         )
 
-        self.wait()
+        self.wait(5)
 
         self.play(
             FadeIn(scared),
             FadeOut(crushed)
         )
 
-        self.wait()
+        self.wait(5)
 
         self.play(
             FadeIn(kill_elephant),
             FadeOut(scared)
         )
 
-        self.wait()
+        self.wait(5)
 
         self.play(
             FadeIn(blind_men),
             FadeOut(kill_elephant)
         )
 
-        self.wait()
+        self.wait(10)
 
         self.play(FadeOut(blind_men))
 
@@ -324,6 +339,8 @@ class PhilosophyProject(Scene):
             Write(point)
         )
 
+        self.wait(19)
+
         self.play(point.animate.to_edge(UP))
 
         errors = ImageMobject("assets/errors.jpg").scale(3)
@@ -332,7 +349,7 @@ class PhilosophyProject(Scene):
             FadeIn(errors)
         )
 
-        self.wait()
+        self.wait(11)
 
         akinator = ImageMobject("assets/akinator.jpg").scale(2.5)
 
@@ -341,21 +358,29 @@ class PhilosophyProject(Scene):
             FadeOut(errors)
         )
 
-        self.wait()
+        self.wait(15)
 
         mime = ImageMobject("assets/mime.jpg").scale(3)
 
         self.play(FadeOut(akinator))
         self.wait()
         self.play(FadeIn(mime))
-        self.wait()
+        self.wait(10)
         self.play(FadeOut(mime))
-        self.wait()
+        self.wait(16)
 
         cross = ImageMobject("assets/cross.jpg").scale(3)
 
         self.play(FadeIn(cross))
 
-        self.wait()
+        self.wait(8)
         self.play(FadeOut(cross), FadeOut(point))
-        self.wait()
+        self.wait(2)
+
+        thanks = Tex(r'Thanks for putting up \\ with us professor :)')
+
+        self.play(
+            Write(thanks)
+        )
+
+        self.wait(2)
